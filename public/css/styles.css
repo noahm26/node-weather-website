@@ -51,6 +51,7 @@ input {
 	width: 300px;
 	margin-right: 0;
 	outline: none;
+	font-size: 18px;
 }
 button {
 	cursor: pointer;
@@ -63,6 +64,7 @@ button {
 	outline: none;
 	background: #333333;
 	color: #eeeeee;
+	font-size: 18px;
 }
 button:hover {
 	background: #555555;
