@@ -11,15 +11,20 @@
 <body>
   <div class="main-content">
     {{>header}}
-    <p>Use this site to get your weather</p>
+    <p>Type in your City to get customized weather for your location.</p>
 
     <form action="">
       <input type="text" placeholder="Location">
       <button type="submit">Search</button>
     </form>
 
-    <p id="message-1"></p>
-    <p id="message-2"></p>
+    <div class="results">
+      <img src="/img/chunky-apps-slack-profile.png" alt="Weather Icon" id="weatherIcon">
+      <div>
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+      </div>
+    </div>
 
   </div>
   {{>footer}}

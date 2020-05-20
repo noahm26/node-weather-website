@@ -13,18 +13,27 @@ const forecast = (lat, long, callback) => {
 		} else if (body.error) {
 			callback('Unable to find location', undefined);
 		} else {
-			const { weather_descriptions, temperature, feelslike } = body.current;
+			const {
+				weather_descriptions,
+				temperature,
+				feelslike,
+				weather_icons,
+			} = body.current;
 			let weather = '';
 			if (weather_descriptions[0]) {
 				weather += weather_descriptions[0] + '. ';
 			}
-			weather +=
-				'It is currently ' +
-				temperature +
-				' degrees outside. It feels like ' +
-				feelslike +
-				' degrees.';
-			callback(undefined, weather);
+			weather += 'It is currently ' + temperature + ' degrees outside';
+			if (temperature === feelslike) {
+				weather += '.';
+			} else {
+				weather += ' but feels like ' + feelslike + ' degrees.';
+			}
+			const weatherInfo = {
+				weather,
+				icon: weather_icons[0],
+			};
+			callback(undefined, weatherInfo);
 		}
 	});
 };

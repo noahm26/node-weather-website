@@ -31,7 +31,7 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
 	res.render('about', {
-		title: 'About Me',
+		title: 'About',
 		name: 'Noah M',
 	});
 });
@@ -40,7 +40,8 @@ app.get('/help', (req, res) => {
 	res.render('help', {
 		title: 'Help',
 		name: 'Noah M',
-		msg: 'This is some very helpful text.',
+		msg:
+			"Enter any City name into the search box and click the Search Button. That's all there is to it! Thank you for visiting.",
 	});
 });
 
